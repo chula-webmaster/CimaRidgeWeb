@@ -199,6 +199,25 @@
   }
   h2 span { color: var(--ember); }
 
+  /* Linked card: the heading link stretches over the whole card */
+  .cc-brand--linked { transition: border-color 0.18s ease, transform 0.18s ease; }
+  .cc-brand--linked:hover { border-color: rgba(232,89,12,0.6); transform: translateY(-2px); }
+  .cc-brand-link { color: inherit; text-decoration: none; }
+  .cc-brand-link::after { content: ""; position: absolute; inset: 0; }
+  .cc-brand-link:focus-visible { outline: none; }
+  .cc-brand-link:focus-visible::after { outline: 2px solid var(--ember); outline-offset: -2px; }
+  .cc-brand-visit {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--tan);
+    white-space: nowrap;
+    transition: color 0.18s ease;
+  }
+  .cc-brand--linked:hover .cc-brand-visit { color: var(--ember); }
+
   .cc-brand p {
     font-family: 'Source Serif 4', Georgia, serif;
     font-size: 15.5px;
@@ -323,7 +342,7 @@
 
   <section class="cc-brands" aria-label="Our brands">
 
-    <article class="cc-brand">
+    <article class="cc-brand cc-brand--linked">
       <div class="cc-brand-head">
         <div class="cc-brand-icon" aria-hidden="true">
           <svg class="cc-line" viewBox="0 0 24 24">
@@ -333,8 +352,9 @@
           </svg>
         </div>
         <div class="cc-brand-kicker">Laser &amp; Wood</div>
+        <div class="cc-brand-visit" aria-hidden="true">Visit site &rarr;</div>
       </div>
-      <h2>Chula <span>Craftworks</span></h2>
+      <h2><a class="cc-brand-link" href="https://chulacraftworks.com">Chula <span>Craftworks</span></a></h2>
       <p>Custom laser engraving, cut signage, and handcrafted wood pieces, made to order.</p>
       <ul class="cc-services">
         <li>Engraving</li>
@@ -367,7 +387,7 @@
 
   <div class="cc-status"><span class="dot"></span>More coming soon</div>
 
-  <p class="cc-contact">Questions, custom orders, or rental inquiries &mdash; <a href="mailto:hello@chulacraftworks.com">hello@chulacraftworks.com</a></p>
+  <p class="cc-contact">Questions, custom orders, or rental inquiries &mdash; <a href="mailto:hello@cimaridge.com">hello@cimaridge.com</a></p>
 
   <footer>
     <span>&copy; 2026 CIMA RIDGE LLC. ALL RIGHTS RESERVED.</span>
